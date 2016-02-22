@@ -1,0 +1,10 @@
+@import '{zurb:foundation-sites}/scss/foundation';
+@include foundation-everything;
+
+#iron-router-progress {
+  background-color: #e74c3c;
+  box-shadow: none;
+  &.spinner:before {
+    border-color: #e74c3c;
+  }
+}
