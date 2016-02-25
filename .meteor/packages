@@ -23,3 +23,7 @@ iron:router
 fourseven:scss
 fortawesome:fontawesome
 multiply:iron-router-progress
+accounts-password
+accounts-ui
+accounts-base
+accounts-github
