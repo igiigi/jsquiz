@@ -1,0 +1,25 @@
+<template name="question">
+    <div class="clearfix">
+        {{#each question}}
+        <div class="large-7 columns card left">
+            <h2>Question 1</h2>
+            {{text}}<br>
+            {{#each answerOptions }}
+            <input type="radio" name="{{this}}" value="{{this}}"
+                   id="{{this}}"><label for="{{this}}">{{this}}</label><br>
+            {{/each}}
+            <button class="button success">Submit</button>
+            <button class="button secondary">Skip</button>
+        </div>
+
+        <div class="large-7 columns card left">
+            <h2>Answer</h2>
+            {{explanation}}<br>
+            <h2>Links</h2>
+            {{#each links}}
+               <a href="{{url}}">{{url}}</a>: {{description}} <br>
+            {{/each}}
+        </div>
+        {{/each}}
+    </div>
+</template>
