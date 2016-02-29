@@ -1,7 +1,17 @@
 <template name="layout">
     {{> header}}
-    <div id="main">
-        {{> home}}
-        {{> question}}
+
+    <div class="row">
+
+        <div class="large-3 pull-9 columns">
+            {{> yield region='aside'}}
+        </div>
+
+        <div class="large-9 push-3 columns">
+            {{> yield region='content'}}
+        </div>
+
+
     </div>
+
 </template>

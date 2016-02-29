@@ -1,7 +1,8 @@
 <template name="question">
     <div class="clearfix">
         {{#each question}}
-        <div class="large-7 columns card left">
+
+        <div class="card">
             <h2>Question 1</h2>
             {{text}}<br>
             {{#each answerOptions }}
@@ -12,7 +13,7 @@
             <button class="button secondary">Skip</button>
         </div>
 
-        <div class="large-7 columns card left">
+        <div class="card">
             <h2>Answer</h2>
             {{explanation}}<br>
             <h2>Links</h2>
