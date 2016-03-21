@@ -1,0 +1,40 @@
+.card {
+    border: 1px solid #cacaca;
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.card input {
+    border-radius: 5px;
+}
+
+.form-group {
+    position: relative;
+    display: inline-block;
+    width: 45%;
+    margin-right: 25px;
+}
+
+.url-group input {
+    border-radius: 5px;
+    width: 41%;
+    position: relative;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.url-group label {
+    position: relative;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.card .plus, .card .minus {
+    margin-bottom: 3px;
+    font-size: 22px;
+    border-radius: 20px;
+    padding: 4px;
+    width: 33px;
+}
+
