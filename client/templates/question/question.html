@@ -2,25 +2,25 @@
     <div class="clearfix">
         {{#each question}}
 
-        <div class="card">
-            <h2>Question 1</h2>
-            {{text}}<br>
-            {{#each answerOptions }}
-            <input type="radio" name="{{this}}" value="{{this}}"
-                   id="{{this}}"><label for="{{this}}">{{this}}</label><br>
-            {{/each}}
-            <button class="button success">Submit</button>
-            <button class="button secondary">Skip</button>
-        </div>
+            <div class="card">
+                <h2>Question {{@index}}</h2>
+                {{text}}<br>
+                {{#each answerOptions }}
+                    <input type="radio" name="{{id}}" value="{{id}}" id="{{id}}">
+                    <label for="{{id}}">{{text}}</label><br>
+                {{/each}}
+                <button class="button success">Submit</button>
+                <button class="button secondary">Skip</button>
+            </div>
 
-        <div class="card">
-            <h2>Answer</h2>
-            {{explanation}}<br>
-            <h2>Links</h2>
-            {{#each links}}
-               <a href="{{url}}">{{url}}</a>: {{description}} <br>
-            {{/each}}
-        </div>
+            <div class="card">
+                <h2>Answer</h2>
+                {{explanation}}<br>
+                <h2>Links</h2>
+                {{#each links}}
+                    <a href="{{url}}">{{url}}</a>: {{title}} <br>
+                {{/each}}
+            </div>
         {{/each}}
     </div>
 </template>

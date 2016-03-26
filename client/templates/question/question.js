@@ -1,5 +1,5 @@
 Template.question.helpers({
     question: function () {
-        return Question.find();
+        return Quiz.find();
     }
 });

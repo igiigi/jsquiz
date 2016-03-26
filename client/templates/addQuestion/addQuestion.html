@@ -1,41 +1,49 @@
 <template name="addQuestion">
-    <div class="card">
+    <form name="card" class="card">
         <h2>Add question</h2>
 
         <label for="text">Question text</label>
-        <input type="text" id="text" />
+        <input type="text" id="text" value="{{formData.text}}" required/>
 
-        {{#each answers}}
-            <div class="form-group">
-                <label>Answer variant {{ id }}</label>
-                <input  class="answer" type="text" value="{{ text }}" />
+        <div class="row">
+            {{#each formData.answerOptions}}
+                <div class="medium-6 columns">
+                    <label>Answer variant {{ id }}
+                        <input class="answer-option" type="text" value="{{ text }}" required/>
+                    </label>
+                </div>
+            {{/each}}
+        </div>
+
+        <label>Select the correct answer
+            <select class="answer">
+                {{#each formData.answerOptions}}
+                    <option value="{{id}}">{{text}}</option>
+                {{/each}}
+            </select>
+        </label>
+
+        <label for="explanation">Explanation</label>
+        <textarea id="explanation" required>{{formData.explanation}}</textarea>
+
+        <label for="links">Links</label>
+
+        {{#each formData.links}}
+            <div class="url-group links">
+                <label>Title</label><input name="title" type="text" data-index="{{@index}}" value="{{title}}"/>
+                <label>URL</label><input name="url" type="text" data-index="{{@index}}" value="{{url}}"/>
+                {{#if checkLength formData.links.length}}
+                    <button type="button" class="button secondary minus remove-link" data-index="{{@index}}">-</button>
+                {{/if}}
+                {{#if checkLast @index formData.links.length}}
+                    <button type="button" class="button success plus add-link">+</button>
+                {{/if}}
             </div>
         {{/each}}
 
-        <button class="button" type="button" data-toggle="example-dropdown">Select the correct answer</button>
-        <div class="dropdown-pane" id="example-dropdown" data-dropdown data-auto-focus="true">
-            <ul>
-                {{#each answers}}
-                  <li>{{ text }}</li>
-                {{/each}}
-            </ul>
-        </div>
-
-
-        <label for="explanation">Explanation</label>
-        <input type="text" id="explanation" />
-
-        <label for="links">Links</label>
-        <div class="url-group">
-            <label>Title</label><input type="text" />
-            <label>URL</label><input type="text" />
-            <button type="button" class="button success plus" id="save">+</button>
-            <button type="button" class="button secondary minus" data-dismiss="modal">-</button>
-        </div>
-
-        <button type="button" class="button success" id="save">Save</button>
+        <button type="submit" class="button success" id="save">Save</button>
         <button type="button" class="button secondary" data-dismiss="modal">Cancel</button>
-    </div>
+    </form>
 </template>
 
 
